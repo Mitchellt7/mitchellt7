@@ -1,0 +1,10 @@
+{
+  "name": "weekly-budget-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple weekly budgeting app with incomes, expenses, bills, and savings goal.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --check script.js"
+  }
+}

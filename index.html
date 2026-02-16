@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekly Budget Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <h1>Weekly Budget Planner</h1>
+      <p>Track multiple income streams, bills, and expenses in one place.</p>
+    </header>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Add Weekly Income</h2>
+        <form id="income-form" class="stack">
+          <label>
+            Income name
+            <input name="name" type="text" placeholder="Paycheck, side hustle..." required />
+          </label>
+          <label>
+            Amount ($)
+            <input name="amount" type="number" min="0" step="0.01" placeholder="0.00" required />
+          </label>
+          <button type="submit">Add income</button>
+        </form>
+        <ul id="income-list" class="item-list"></ul>
+      </article>
+
+      <article class="panel">
+        <h2>Add Expense</h2>
+        <form id="expense-form" class="stack">
+          <label>
+            Expense name
+            <input name="name" type="text" placeholder="Rent, groceries..." required />
+          </label>
+          <label>
+            Amount ($)
+            <input name="amount" type="number" min="0" step="0.01" placeholder="0.00" required />
+          </label>
+          <label class="checkbox-row">
+            <input name="isBill" type="checkbox" />
+            <span>This is a bill</span>
+          </label>
+          <button type="submit">Add expense</button>
+        </form>
+        <ul id="expense-list" class="item-list"></ul>
+      </article>
+
+      <article class="panel savings-box">
+        <h2>Savings Box</h2>
+        <form id="savings-form" class="stack">
+          <label>
+            Weekly savings goal ($)
+            <input id="savings-goal" name="savingsGoal" type="number" min="0" step="0.01" placeholder="0.00" required />
+          </label>
+          <button type="submit">Set goal</button>
+        </form>
+        <p class="help">Use this to set aside money after paying bills.</p>
+      </article>
+    </section>
+
+    <section class="panel summary" id="summary">
+      <h2>Weekly Summary</h2>
+      <div class="summary-grid">
+        <div>
+          <span>Total income</span>
+          <strong id="total-income">$0.00</strong>
+        </div>
+        <div>
+          <span>Total bills</span>
+          <strong id="total-bills">$0.00</strong>
+        </div>
+        <div>
+          <span>Other expenses</span>
+          <strong id="total-other-expenses">$0.00</strong>
+        </div>
+        <div>
+          <span>Money left after bills</span>
+          <strong id="left-after-bills">$0.00</strong>
+        </div>
+        <div>
+          <span>Savings goal</span>
+          <strong id="savings-display">$0.00</strong>
+        </div>
+        <div>
+          <span>Money left after bills + savings</span>
+          <strong id="left-after-savings">$0.00</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="item-template">
+    <li>
+      <div>
+        <strong class="item-name"></strong>
+        <span class="item-meta"></span>
+      </div>
+      <button class="delete-btn" type="button">Remove</button>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "budget-buddy-multiplatform",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "typecheck": "echo 'No TypeScript build required for static app'"
+  }
+}

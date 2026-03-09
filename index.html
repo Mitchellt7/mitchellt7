@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Buddy</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero card">
+        <h1>Budget Buddy</h1>
+        <p>Track your money with style ✨</p>
+      </header>
+
+      <section class="grid stats">
+        <div class="stat income"><h3>Income</h3><p id="income">$0.00</p></div>
+        <div class="stat expense"><h3>Expenses</h3><p id="expenses">$0.00</p></div>
+        <div class="stat balance"><h3>Balance</h3><p id="balance">$0.00</p></div>
+      </section>
+
+      <section class="card">
+        <h2>Add Transaction</h2>
+        <form id="tx-form">
+          <input id="title" placeholder="Title" required />
+          <input id="amount" placeholder="Amount" type="number" min="0.01" step="0.01" required />
+
+          <div class="type-toggle" role="group" aria-label="Transaction type">
+            <button type="button" id="income-btn" class="toggle-btn income-btn">Income</button>
+            <button type="button" id="expense-btn" class="toggle-btn expense-btn active">Expense</button>
+          </div>
+
+          <input type="hidden" id="type" value="expense" />
+          <input id="category" placeholder="Category" value="Other" required />
+          <button type="submit" class="primary-btn">Save Transaction</button>
+        </form>
+      </section>
+
+      <section class="grid two">
+        <div class="card">
+          <h2>Spending by Category</h2>
+          <ul id="by-category"></ul>
+        </div>
+        <div class="card">
+          <h2>Recent Transactions</h2>
+          <ul id="list"></ul>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

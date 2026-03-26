@@ -24,3 +24,9 @@ Then open: `http://localhost:4173`.
 
 - No npm dependencies are required.
 - This avoids restricted package registry issues in locked-down environments.
+
+## Java Windows desktop version
+
+A desktop Java Swing version is included at `java-budget-app/` with a polished UI for actual and expected income/expenses.
+
+See: `java-budget-app/README.md` for run instructions.
